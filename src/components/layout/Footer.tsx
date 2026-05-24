@@ -1,14 +1,13 @@
 "use client";
 
-import { Github, Linkedin, Twitter, Mail, ArrowUp } from "lucide-react";
+import { Github, Mail, ArrowUp, Send } from "lucide-react";
 import { socials } from "@/data/socials";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { personalInfo } from "@/data/socials";
 
 const iconMap: Record<string, React.ReactNode> = {
   github: <Github size={18} />,
-  linkedin: <Linkedin size={18} />,
-  twitter: <Twitter size={18} />,
+  telegram: <Send size={18} />,
   mail: <Mail size={18} />,
 };
 
@@ -27,7 +26,7 @@ export function Footer() {
                 onClick={scrollToTop}
                 className="text-lg font-display font-bold tracking-tight hover:text-accent transition-colors duration-300"
               >
-                AR<span className="text-accent">.</span>
+                S<span className="text-accent">.</span>
               </button>
               <span className="text-muted text-sm ml-4">
                 &copy; {new Date().getFullYear()} {personalInfo.name}. Все права защищены.

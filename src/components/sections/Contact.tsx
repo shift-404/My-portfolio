@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, MapPin, Github, Linkedin, Twitter } from "lucide-react";
+import { Send, Mail, MapPin, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,7 +14,7 @@ const contactInfo = [
   {
     icon: <Mail size={16} />,
     label: "Почта",
-    value: personalInfo.email,
+    value: "Написать письмо",
     href: `mailto:${personalInfo.email}`,
   },
   {
@@ -26,8 +26,7 @@ const contactInfo = [
 
 const socialIcons: Record<string, React.ReactNode> = {
   github: <Github size={18} />,
-  linkedin: <Linkedin size={18} />,
-  twitter: <Twitter size={18} />,
+  telegram: <Send size={18} />,
   mail: <Mail size={18} />,
 };
 

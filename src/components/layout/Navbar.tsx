@@ -64,7 +64,7 @@ export function Navbar() {
             onClick={() => handleClick("#home")}
             className="text-lg font-display font-bold tracking-tight hover:text-accent transition-colors duration-300"
           >
-            AR<span className="text-accent">.</span>
+            S<span className="text-accent">.</span>
           </button>
 
           <div className="hidden md:flex items-center gap-1">

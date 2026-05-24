@@ -63,14 +63,13 @@ export function About() {
               </p>
 
               <p className="text-muted leading-relaxed">
-                Специализируюсь на создании full-stack приложений с использованием
-                современных технологий, таких как Next.js, TypeScript и Node.js. Моя цель —
-                создавать производительные, доступные и визуально впечатляющие цифровые
-                продукты, решающие реальные задачи.
+                Объединяю системное администрирование и веб-разработку для создания
+                надёжных, масштабируемых решений. Имею опыт работы с инфраструктурой Meta,
+                настройкой серверов и разработкой высоконагруженных приложений.
               </p>
 
               <div className="flex flex-wrap gap-3 pt-2">
-                {["React", "Next.js", "TypeScript", "Node.js", "TailwindCSS", "PostgreSQL", "Docker", "AWS"].map(
+                {["React", "Next.js", "TypeScript", "Node.js", "TailwindCSS", "PostgreSQL", "Docker", "AWS", "Linux", "Nginx", "Meta API"].map(
                   (tech) => (
                     <span
                       key={tech}

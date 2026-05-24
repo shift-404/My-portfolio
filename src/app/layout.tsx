@@ -19,9 +19,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Rivera | Fullstack-разработчик",
+  title: "Руслан Чистяков | Fullstack-разработчик",
   description:
-    "Fullstack-разработчик, создающий производительные, масштабируемые веб-приложения с использованием современных технологий.",
+    "Full-stack разработчик и системный администратор. Создаю цифровые экосистемы с нуля: от серверной инфраструктуры до кастомных интерфейсов.",
   keywords: [
     "разработчик",
     "fullstack",
@@ -29,12 +29,13 @@ export const metadata: Metadata = {
     "next.js",
     "typescript",
     "портфолио",
+    "системный администратор",
   ],
-  authors: [{ name: "Alex Rivera" }],
+  authors: [{ name: "Руслан Чистяков" }],
   openGraph: {
-    title: "Alex Rivera | Fullstack-разработчик",
+    title: "Руслан Чистяков | Fullstack-разработчик",
     description:
-      "Fullstack-разработчик, создающий производительные, масштабируемые веб-приложения.",
+      "Full-stack разработчик и системный администратор. Создаю цифровые экосистемы с нуля.",
     type: "website",
   },
 };

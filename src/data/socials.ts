@@ -7,38 +7,33 @@ export interface Social {
 export const socials: Social[] = [
   {
     name: "GitHub",
-    url: "https://github.com",
+    url: "https://github.com/shift-404",
     icon: "github",
   },
   {
-    name: "LinkedIn",
-    url: "https://linkedin.com",
-    icon: "linkedin",
-  },
-  {
-    name: "Twitter",
-    url: "https://twitter.com",
-    icon: "twitter",
+    name: "Telegram",
+    url: "https://t.me/shift_404",
+    icon: "telegram",
   },
   {
     name: "Email",
-    url: "mailto:hello@example.com",
+    url: "mailto:rusiyvarvar@gmail.com",
     icon: "mail",
   },
 ];
 
 export const personalInfo = {
-  name: "Alex Rivera",
+  name: "Руслан Чистяков",
   title: "Fullstack-разработчик",
-  tagline: "Создаю цифровые впечатления, которые имеют значение",
-  bio: "Я создаю производительные, масштабируемые веб-приложения с использованием современных технологий. Увлечен чистым кодом, красивыми интерфейсами и расширением границ возможного в вебе.",
-  location: "Сан-Франциско, Калифорния",
-  email: "hello@example.com",
-  resumeUrl: "/resume.pdf",
+  tagline: "На стыке системной архитектуры и чистого кода.",
+  bio: "Full-stack разработчик и системный администратор с фокусом на автоматизацию и производительность. Создаю цифровые экосистемы с нуля: от настройки серверной инфраструктуры до разработки кастомных интерфейсов.",
+  location: "Одесса, Украина",
+  email: "rusiyvarvar@gmail.com",
+  resumeUrl: "",
   stats: {
-    experience: 5,
-    projects: 20,
-    technologies: 30,
-    clients: 15,
+    experience: 6,
+    projects: 30,
+    technologies: 40,
+    clients: 10,
   },
 };
