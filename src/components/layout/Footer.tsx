@@ -4,6 +4,7 @@ import { Github, Mail, ArrowUp, Send } from "lucide-react";
 import { socials } from "@/data/socials";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { personalInfo } from "@/data/socials";
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
 const iconMap: Record<string, React.ReactNode> = {
   github: <Github size={18} />,
@@ -12,6 +13,8 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export function Footer() {
+  const { t } = useLanguage();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -29,7 +32,7 @@ export function Footer() {
                 S<span className="text-accent">.</span>
               </button>
               <span className="text-muted text-sm ml-4">
-                &copy; {new Date().getFullYear()} {personalInfo.name}. Все права защищены.
+                &copy; {new Date().getFullYear()} {personalInfo.name}. {t("footer.rights")}
               </span>
             </div>
 

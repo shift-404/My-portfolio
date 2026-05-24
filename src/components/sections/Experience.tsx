@@ -6,6 +6,7 @@ import { Briefcase, GraduationCap, Star } from "lucide-react";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { TextReveal } from "@/components/animations/TextReveal";
 import { experiences } from "@/data/experience";
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
 const typeConfig = {
   work: {
@@ -35,9 +36,13 @@ function TimelineItem({
   experience: (typeof experiences)[0];
   index: number;
 }) {
+  const { lang } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const config = typeConfig[experience.type];
+
+  const getLocalized = (field: { ru: string; uk: string; en: string }) =>
+    field[lang] || field.ru;
 
   return (
     <motion.div
@@ -51,43 +56,40 @@ function TimelineItem({
       }}
       className="relative pl-12 pb-12 last:pb-0 group"
     >
-      {/* Timeline line */}
       <div className="absolute left-[19px] top-10 bottom-0 w-px bg-border group-last:bg-transparent" />
 
-      {/* Timeline dot */}
       <div
         className={`absolute left-0 top-1 w-10 h-10 rounded-full border ${config.border} ${config.bg} flex items-center justify-center z-10 group-hover:scale-110 transition-transform duration-300`}
       >
         <config.icon size={16} className={config.color} />
       </div>
 
-      {/* Content card */}
       <div className="p-6 rounded-xl border border-border bg-surface/30 backdrop-blur-sm hover:border-accent/20 transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(139,92,246,0.05)]">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
           <div>
             <h3 className="text-lg font-display font-bold text-foreground">
-              {experience.role}
+              {getLocalized(experience.role)}
             </h3>
             <p className="text-accent-light text-sm font-medium">
-              {experience.company}
+              {getLocalized(experience.company)}
             </p>
           </div>
           <span className="text-xs text-muted font-mono whitespace-nowrap px-3 py-1 rounded-full border border-border bg-background/50">
-            {experience.period}
+            {getLocalized(experience.period)}
           </span>
         </div>
 
         <p className="text-muted text-sm leading-relaxed mb-4">
-          {experience.description}
+          {getLocalized(experience.description)}
         </p>
 
         <div className="flex flex-wrap gap-2">
-          {experience.highlights.map((highlight) => (
+          {experience.highlights.map((highlight, i) => (
             <span
-              key={highlight}
+              key={i}
               className="text-xs px-2.5 py-1 rounded-md bg-accent/5 border border-accent/10 text-accent-light/80"
             >
-              {highlight}
+              {getLocalized(highlight)}
             </span>
           ))}
         </div>
@@ -97,6 +99,8 @@ function TimelineItem({
 }
 
 export function Experience() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="experience"
@@ -110,13 +114,13 @@ export function Experience() {
         <ScrollReveal>
           <div className="flex flex-col items-center text-center mb-16">
             <span className="text-accent font-mono text-sm tracking-widest uppercase mb-4">
-              /experience
+              {t("experience.section")}
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">
-              <TextReveal>Опыт</TextReveal>
+              <TextReveal>{t("experience.title")}</TextReveal>
             </h2>
             <p className="text-muted text-lg max-w-2xl">
-              Мой профессиональный путь в разработке программного обеспечения
+              {t("experience.subtitle")}
             </p>
           </div>
         </ScrollReveal>

@@ -9,20 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { TextReveal } from "@/components/animations/TextReveal";
 import { socials, personalInfo } from "@/data/socials";
-
-const contactInfo = [
-  {
-    icon: <Mail size={16} />,
-    label: "Почта",
-    value: "Написать письмо",
-    href: `mailto:${personalInfo.email}`,
-  },
-  {
-    icon: <MapPin size={16} />,
-    label: "Локация",
-    value: personalInfo.location,
-  },
-];
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
 const socialIcons: Record<string, React.ReactNode> = {
   github: <Github size={18} />,
@@ -31,6 +18,7 @@ const socialIcons: Record<string, React.ReactNode> = {
 };
 
 export function Contact() {
+  const { t } = useLanguage();
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -49,6 +37,20 @@ export function Contact() {
     setTimeout(() => setSubmitted(false), 5000);
   };
 
+  const contactInfo = [
+    {
+      icon: <Mail size={16} />,
+      label: t("contact.email"),
+      value: t("contact.writeEmail"),
+      href: `mailto:${personalInfo.email}`,
+    },
+    {
+      icon: <MapPin size={16} />,
+      label: t("contact.location"),
+      value: personalInfo.location,
+    },
+  ];
+
   return (
     <section id="contact" className="relative py-32 border-t border-border/50">
       <div className="absolute inset-0 pointer-events-none">
@@ -59,27 +61,23 @@ export function Contact() {
         <ScrollReveal>
           <div className="flex flex-col items-center text-center mb-16">
             <span className="text-accent font-mono text-sm tracking-widest uppercase mb-4">
-              /contact
+              {t("contact.section")}
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">
-              <TextReveal>Связаться</TextReveal>
+              <TextReveal>{t("contact.title")}</TextReveal>
             </h2>
             <p className="text-muted text-lg max-w-2xl">
-              Есть проект или просто хотите сказать привет? Буду рад услышать вас.
+              {t("contact.subtitle")}
             </p>
           </div>
         </ScrollReveal>
 
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 max-w-5xl mx-auto">
-          {/* Contact Info */}
-          <ScrollReveal
-            direction="left"
-            className="lg:col-span-2"
-          >
+          <ScrollReveal direction="left" className="lg:col-span-2">
             <div className="space-y-6">
               <div className="p-6 rounded-xl border border-border bg-surface/30 backdrop-blur-sm">
                 <h3 className="text-lg font-display font-bold mb-4">
-                  Контакты
+                  {t("contact.info")}
                 </h3>
                 <div className="space-y-4">
                   {contactInfo.map((info) => (
@@ -109,7 +107,7 @@ export function Contact() {
 
               <div className="p-6 rounded-xl border border-border bg-surface/30 backdrop-blur-sm">
                 <h3 className="text-lg font-display font-bold mb-4">
-                  Социальные сети
+                  {t("contact.social")}
                 </h3>
                 <div className="flex gap-3">
                   {socials.map((social) => (
@@ -129,11 +127,7 @@ export function Contact() {
             </div>
           </ScrollReveal>
 
-          {/* Form */}
-          <ScrollReveal
-            direction="right"
-            className="lg:col-span-3"
-          >
+          <ScrollReveal direction="right" className="lg:col-span-3">
             <form
               onSubmit={handleSubmit}
               className="p-8 rounded-xl border border-border bg-surface/30 backdrop-blur-sm"
@@ -148,10 +142,10 @@ export function Contact() {
                     <Send size={24} className="text-accent-light" />
                   </div>
                   <h3 className="text-xl font-display font-bold mb-2">
-                    Сообщение отправлено!
+                    {t("contact.sentTitle")}
                   </h3>
                   <p className="text-muted text-sm">
-                    Спасибо, что написали. Я свяжусь с вами в ближайшее время.
+                    {t("contact.sentText")}
                   </p>
                 </motion.div>
               ) : (
@@ -159,10 +153,10 @@ export function Contact() {
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div className="space-y-2">
                       <label className="text-sm text-muted font-medium">
-                        Имя
+                        {t("contact.nameLabel")}
                       </label>
                       <Input
-                        placeholder="Ваше имя"
+                        placeholder={t("contact.namePlaceholder")}
                         value={formState.name}
                         onChange={(e) =>
                           setFormState({ ...formState, name: e.target.value })
@@ -172,11 +166,11 @@ export function Contact() {
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm text-muted font-medium">
-                        Email
+                        {t("contact.emailLabel")}
                       </label>
                       <Input
                         type="email"
-                        placeholder="your@email.com"
+                        placeholder={t("contact.emailPlaceholder")}
                         value={formState.email}
                         onChange={(e) =>
                           setFormState({ ...formState, email: e.target.value })
@@ -187,10 +181,10 @@ export function Contact() {
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm text-muted font-medium">
-                      Сообщение
+                      {t("contact.messageLabel")}
                     </label>
                     <Textarea
-                      placeholder="Расскажите о вашем проекте..."
+                      placeholder={t("contact.messagePlaceholder")}
                       value={formState.message}
                       onChange={(e) =>
                         setFormState({
@@ -219,11 +213,11 @@ export function Contact() {
                           }}
                           className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
                         />
-                        Отправка...
+                        {t("contact.sending")}
                       </>
                     ) : (
                       <>
-                        Отправить
+                        {t("contact.send")}
                         <Send size={16} />
                       </>
                     )}

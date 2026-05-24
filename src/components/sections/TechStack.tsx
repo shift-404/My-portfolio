@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { TextReveal } from "@/components/animations/TextReveal";
 import { techStack, type TechCategoryGroup } from "@/data/techstack";
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
 const categoryColors: Record<TechCategoryGroup["category"], string> = {
   frontend: "from-blue-500/20 to-cyan-500/20 border-blue-500/20",
@@ -21,7 +22,17 @@ const accentColors: Record<TechCategoryGroup["category"], string> = {
   tools: "text-purple-400",
 };
 
+const categoryLabelKey: Record<TechCategoryGroup["category"], string> = {
+  frontend: "stack.category.frontend",
+  backend: "stack.category.backend",
+  database: "stack.category.database",
+  devops: "stack.category.devops",
+  tools: "stack.category.tools",
+};
+
 export function TechStack() {
+  const { t } = useLanguage();
+
   return (
     <section id="stack" className="relative py-32 border-t border-border/50">
       <div className="absolute inset-0 pointer-events-none">
@@ -32,13 +43,13 @@ export function TechStack() {
         <ScrollReveal>
           <div className="flex flex-col items-center text-center mb-16">
             <span className="text-accent font-mono text-sm tracking-widest uppercase mb-4">
-              /stack
+              {t("stack.section")}
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">
-              <TextReveal>Технологии</TextReveal>
+              <TextReveal>{t("stack.title")}</TextReveal>
             </h2>
             <p className="text-muted text-lg max-w-2xl">
-              Технологии, с которыми я работаю ежедневно для создания современных веб-приложений
+              {t("stack.subtitle")}
             </p>
           </div>
         </ScrollReveal>
@@ -61,7 +72,7 @@ export function TechStack() {
                   <h3
                     className={`text-lg font-display font-bold mb-4 ${accentColors[group.category]}`}
                   >
-                    {group.label}
+                    {t(categoryLabelKey[group.category])}
                   </h3>
                   <div className="grid grid-cols-2 gap-2">
                     {group.items.map((item) => (

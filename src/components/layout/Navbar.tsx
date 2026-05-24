@@ -4,17 +4,19 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
 const navLinks = [
-  { label: "Главная", href: "#home" },
-  { label: "Обо мне", href: "#about" },
-  { label: "Стек", href: "#stack" },
-  { label: "Проекты", href: "#projects" },
-  { label: "Опыт", href: "#experience" },
-  { label: "Контакты", href: "#contact" },
+  { labelKey: "nav.home", href: "#home" },
+  { labelKey: "nav.about", href: "#about" },
+  { labelKey: "nav.stack", href: "#stack" },
+  { labelKey: "nav.projects", href: "#projects" },
+  { labelKey: "nav.experience", href: "#experience" },
+  { labelKey: "nav.contact", href: "#contact" },
 ];
 
 export function Navbar() {
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
@@ -79,7 +81,7 @@ export function Navbar() {
                     : "text-muted hover:text-foreground"
                 )}
               >
-                {link.label}
+                {t(link.labelKey)}
                 {activeSection === link.href.slice(1) && (
                   <motion.div
                     layoutId="activeNav"
@@ -126,7 +128,7 @@ export function Navbar() {
                       : "text-muted hover:text-foreground"
                   )}
                 >
-                  {link.label}
+                  {t(link.labelKey)}
                 </motion.button>
               ))}
             </div>

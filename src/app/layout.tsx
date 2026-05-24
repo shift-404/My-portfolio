@@ -5,6 +5,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
+import { LanguageModal } from "@/components/layout/LanguageModal";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -58,11 +60,14 @@ export default function RootLayout({
           forcedTheme="dark"
           enableSystem={false}
         >
-          <SmoothScroll>
-            <Navbar />
-            <main className="relative">{children}</main>
-            <Footer />
-          </SmoothScroll>
+          <LanguageProvider>
+            <SmoothScroll>
+              <LanguageModal />
+              <Navbar />
+              <main className="relative">{children}</main>
+              <Footer />
+            </SmoothScroll>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,20 +1,22 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { Code2, Briefcase, Users, Zap } from "lucide-react";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { TextReveal } from "@/components/animations/TextReveal";
 import { personalInfo } from "@/data/socials";
-
-const stats = [
-  { icon: <Briefcase size={20} />, value: `${personalInfo.stats.experience}+`, label: "Лет опыта" },
-  { icon: <Code2 size={20} />, value: `${personalInfo.stats.projects}+`, label: "Проектов" },
-  { icon: <Zap size={20} />, value: `${personalInfo.stats.technologies}+`, label: "Технологий" },
-  { icon: <Users size={20} />, value: `${personalInfo.stats.clients}+`, label: "Клиентов" },
-];
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
 export function About() {
+  const { t } = useLanguage();
+
+  const stats = [
+    { icon: <Briefcase size={20} />, value: `${personalInfo.stats.experience}+`, label: t("about.statExperience") },
+    { icon: <Code2 size={20} />, value: `${personalInfo.stats.projects}+`, label: t("about.statProjects") },
+    { icon: <Zap size={20} />, value: `${personalInfo.stats.technologies}+`, label: t("about.statTechnologies") },
+    { icon: <Users size={20} />, value: `${personalInfo.stats.clients}+`, label: t("about.statClients") },
+  ];
+
   return (
     <section
       id="about"
@@ -28,10 +30,10 @@ export function About() {
         <ScrollReveal>
           <div className="flex flex-col items-center text-center mb-16">
             <span className="text-accent font-mono text-sm tracking-widest uppercase mb-4">
-              /about
+              {t("about.section")}
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">
-              <TextReveal>Обо мне</TextReveal>
+              <TextReveal>{t("about.title")}</TextReveal>
             </h2>
           </div>
         </ScrollReveal>
@@ -59,13 +61,11 @@ export function About() {
           <ScrollReveal direction="right">
             <div className="space-y-6">
               <p className="text-lg text-muted leading-relaxed">
-                {personalInfo.bio}
+                {t("personal.bio")}
               </p>
 
               <p className="text-muted leading-relaxed">
-                Объединяю системное администрирование и веб-разработку для создания
-                надёжных, масштабируемых решений. Имею опыт работы с инфраструктурой Meta,
-                настройкой серверов и разработкой высоконагруженных приложений.
+                {t("about.bio2")}
               </p>
 
               <div className="flex flex-wrap gap-3 pt-2">

@@ -9,6 +9,7 @@ import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { TextReveal } from "@/components/animations/TextReveal";
 import { ParallaxTilt } from "@/components/animations/ParallaxTilt";
 import { projects } from "@/data/projects";
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
 function ProjectCard({
   project,
@@ -17,6 +18,7 @@ function ProjectCard({
   project: (typeof projects)[0];
   index: number;
 }) {
+  const { t } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -40,7 +42,6 @@ function ProjectCard({
           isEven ? "" : "lg:direction-rtl"
         }`}
       >
-        {/* Content */}
         <div className={`order-2 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
           <ScrollReveal
             direction={isEven ? "left" : "right"}
@@ -48,7 +49,7 @@ function ProjectCard({
           >
             <div className="space-y-6">
               <Badge variant="glow" className="text-xs tracking-wider">
-                Избранный проект
+                {t("projects.featured")}
               </Badge>
 
               <h3 className="text-3xl sm:text-4xl font-display font-bold">
@@ -74,7 +75,7 @@ function ProjectCard({
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Демо
+                    {t("projects.liveDemo")}
                     <ExternalLink size={14} />
                   </a>
                 </Button>
@@ -85,7 +86,7 @@ function ProjectCard({
                     rel="noopener noreferrer"
                   >
                     <Github size={14} />
-                    Исходный код
+                    {t("projects.source")}
                   </a>
                 </Button>
               </div>
@@ -93,7 +94,6 @@ function ProjectCard({
           </ScrollReveal>
         </div>
 
-        {/* Image/Preview */}
         <div className={`order-1 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
           <ScrollReveal
             direction={isEven ? "right" : "left"}
@@ -139,6 +139,8 @@ function ProjectCard({
 }
 
 export function Projects() {
+  const { t } = useLanguage();
+
   return (
     <section id="projects" className="relative py-32 border-t border-border/50">
       <div className="absolute inset-0 pointer-events-none">
@@ -149,13 +151,13 @@ export function Projects() {
         <ScrollReveal>
           <div className="flex flex-col items-center text-center mb-24">
             <span className="text-accent font-mono text-sm tracking-widest uppercase mb-4">
-              /projects
+              {t("projects.section")}
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">
-              <TextReveal>Избранные работы</TextReveal>
+              <TextReveal>{t("projects.title")}</TextReveal>
             </h2>
             <p className="text-muted text-lg max-w-2xl">
-              Коллекция проектов, которые я создал — от идеи до производства
+              {t("projects.subtitle")}
             </p>
           </div>
         </ScrollReveal>
@@ -174,11 +176,11 @@ export function Projects() {
           <div className="flex justify-center mt-16">
             <Button variant="outline" size="lg" className="gap-2" asChild>
               <a
-                href="https://github.com"
+                href="https://github.com/shift-404"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Все проекты
+                {t("projects.viewAll")}
                 <ArrowRight size={16} />
               </a>
             </Button>

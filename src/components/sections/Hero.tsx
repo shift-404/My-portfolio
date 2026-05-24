@@ -5,10 +5,12 @@ import { motion } from "framer-motion";
 import { ArrowDown, ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { personalInfo } from "@/data/socials";
+import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
 const nameChars = personalInfo.name.split("");
 
 export function Hero() {
+  const { t } = useLanguage();
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,7 +38,6 @@ export function Hero() {
       ref={containerRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-[120px] animate-pulse-slow" />
         <div
@@ -73,7 +74,7 @@ export function Hero() {
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5 text-accent-light text-sm font-medium">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            Открыт к предложениям
+            {t("hero.available")}
           </span>
         </motion.div>
 
@@ -112,7 +113,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 1.2 }}
           className="text-lg sm:text-xl text-muted max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          {personalInfo.tagline}
+          {t("personal.tagline")}
         </motion.p>
 
         <motion.div
@@ -127,7 +128,7 @@ export function Hero() {
             onClick={() => scrollTo("projects")}
             className="gap-2"
           >
-            Проекты
+            {t("hero.viewProjects")}
             <ExternalLink size={16} />
           </Button>
           <Button
@@ -136,10 +137,10 @@ export function Hero() {
             onClick={() => scrollTo("contact")}
             className="gap-2"
           >
-            Связаться
+            {t("hero.getInTouch")}
           </Button>
           <Button size="lg" variant="ghost" className="gap-2" asChild>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/shift-404" target="_blank" rel="noopener noreferrer">
               <Github size={18} />
               GitHub
             </a>
@@ -160,7 +161,7 @@ export function Hero() {
           className="flex flex-col items-center gap-2 text-muted hover:text-foreground transition-colors"
         >
           <span className="text-xs font-medium tracking-widest uppercase">
-            Листать
+            {t("hero.scroll")}
           </span>
           <ArrowDown size={16} />
         </motion.button>
