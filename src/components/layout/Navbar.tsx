@@ -6,12 +6,12 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Stack", href: "#stack" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+  { label: "Главная", href: "#home" },
+  { label: "Обо мне", href: "#about" },
+  { label: "Стек", href: "#stack" },
+  { label: "Проекты", href: "#projects" },
+  { label: "Опыт", href: "#experience" },
+  { label: "Контакты", href: "#contact" },
 ];
 
 export function Navbar() {

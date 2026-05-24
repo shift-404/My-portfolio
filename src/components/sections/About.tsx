@@ -8,31 +8,11 @@ import { TextReveal } from "@/components/animations/TextReveal";
 import { personalInfo } from "@/data/socials";
 
 const stats = [
-  { icon: <Briefcase size={20} />, value: `${personalInfo.stats.experience}+`, label: "Years Experience" },
-  { icon: <Code2 size={20} />, value: `${personalInfo.stats.projects}+`, label: "Projects Done" },
-  { icon: <Zap size={20} />, value: `${personalInfo.stats.technologies}+`, label: "Technologies" },
-  { icon: <Users size={20} />, value: `${personalInfo.stats.clients}+`, label: "Happy Clients" },
+  { icon: <Briefcase size={20} />, value: `${personalInfo.stats.experience}+`, label: "Лет опыта" },
+  { icon: <Code2 size={20} />, value: `${personalInfo.stats.projects}+`, label: "Проектов" },
+  { icon: <Zap size={20} />, value: `${personalInfo.stats.technologies}+`, label: "Технологий" },
+  { icon: <Users size={20} />, value: `${personalInfo.stats.clients}+`, label: "Клиентов" },
 ];
-
-function Counter({ value, suffix = "" }: { value: string; suffix?: string }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true });
-  const num = parseInt(value);
-  const displayNum = isInView ? num : 0;
-
-  return (
-    <span ref={ref}>
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : {}}
-      >
-        {displayNum}
-        {suffix}
-      </motion.span>
-      {isNaN(num) && value}
-    </span>
-  );
-}
 
 export function About() {
   return (
@@ -40,7 +20,6 @@ export function About() {
       id="about"
       className="relative py-32 border-t border-border/50"
     >
-      {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[120px]" />
       </div>
@@ -52,7 +31,7 @@ export function About() {
               /about
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">
-              <TextReveal>About Me</TextReveal>
+              <TextReveal>Обо мне</TextReveal>
             </h2>
           </div>
         </ScrollReveal>
@@ -84,10 +63,10 @@ export function About() {
               </p>
 
               <p className="text-muted leading-relaxed">
-                I specialize in building full-stack applications with modern
-                technologies like Next.js, TypeScript, and Node.js. My focus is
-                on creating performant, accessible, and visually stunning digital
-                experiences that solve real-world problems.
+                Специализируюсь на создании full-stack приложений с использованием
+                современных технологий, таких как Next.js, TypeScript и Node.js. Моя цель —
+                создавать производительные, доступные и визуально впечатляющие цифровые
+                продукты, решающие реальные задачи.
               </p>
 
               <div className="flex flex-wrap gap-3 pt-2">
@@ -106,7 +85,6 @@ export function About() {
           </ScrollReveal>
         </div>
 
-        {/* Stats */}
         <ScrollReveal delay={0.3}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20">
             {stats.map((stat, i) => (

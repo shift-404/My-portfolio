@@ -20,7 +20,7 @@ export interface TechCategoryGroup {
 export const techStack: TechCategoryGroup[] = [
   {
     category: "frontend",
-    label: "Frontend",
+    label: "Фронтенд",
     items: [
       { name: "React", icon: "⚛️", category: "frontend" },
       { name: "Next.js", icon: "▲", category: "frontend" },
@@ -32,7 +32,7 @@ export const techStack: TechCategoryGroup[] = [
   },
   {
     category: "backend",
-    label: "Backend",
+    label: "Бэкенд",
     items: [
       { name: "Node.js", icon: "🟢", category: "backend" },
       { name: "Python", icon: "🐍", category: "backend" },
@@ -44,7 +44,7 @@ export const techStack: TechCategoryGroup[] = [
   },
   {
     category: "database",
-    label: "Databases",
+    label: "Базы данных",
     items: [
       { name: "PostgreSQL", icon: "🐘", category: "database" },
       { name: "MongoDB", icon: "🍃", category: "database" },
@@ -66,7 +66,7 @@ export const techStack: TechCategoryGroup[] = [
   },
   {
     category: "tools",
-    label: "Tools",
+    label: "Инструменты",
     items: [
       { name: "VS Code", icon: "💻", category: "tools" },
       { name: "Figma", icon: "🖌️", category: "tools" },

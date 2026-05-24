@@ -14,9 +14,9 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "Nova",
-    description: "AI-powered project management platform with real-time collaboration",
+    description: "Платформа управления проектами с ИИ и реальным временем",
     longDescription:
-      "A next-generation project management tool built with AI capabilities. Features intelligent task prioritization, automated workflow suggestions, and real-time team collaboration with WebSocket-powered updates.",
+      "Инструмент управления проектами нового поколения на базе искусственного интеллекта. Включает интеллектуальную приоритизацию задач, автоматические рекомендации рабочих процессов и совместную работу в реальном времени через WebSocket.",
     image: "/placeholder.svg",
     tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "WebSockets"],
     githubUrl: "https://github.com",
@@ -26,9 +26,9 @@ export const projects: Project[] = [
   {
     id: 2,
     title: "Aether",
-    description: "Design system and component library for modern web apps",
+    description: "Дизайн-система и библиотека компонентов для современных веб-приложений",
     longDescription:
-      "A comprehensive design system featuring 50+ production-ready components with full accessibility support, dark mode, and customizable themes. Built with Radix UI primitives and styled with TailwindCSS.",
+      "Комплексная дизайн-система с 50+ готовыми к production компонентами, полной поддержкой доступности, тёмной темой и настраиваемыми темами. Построена на примитивах Radix UI и стилизована с помощью TailwindCSS.",
     image: "/placeholder.svg",
     tags: ["React", "Radix UI", "TailwindCSS", "Storybook"],
     githubUrl: "https://github.com",
@@ -38,9 +38,9 @@ export const projects: Project[] = [
   {
     id: 3,
     title: "Synthwave",
-    description: "Real-time audio visualization and music collaboration platform",
+    description: "Платформа визуализации аудио и совместного создания музыки",
     longDescription:
-      "A real-time audio visualization platform that lets multiple users collaborate on music creation simultaneously. Features WebAudio API integration, MIDI support, and cloud-synced project files.",
+      "Платформа визуализации аудио в реальном времени, позволяющая нескольким пользователям одновременно collaborировать над созданием музыки. Включает интеграцию с WebAudio API, поддержку MIDI и облачную синхронизацию проектов.",
     image: "/placeholder.svg",
     tags: ["Next.js", "WebAudio API", "WebSockets", "Docker"],
     githubUrl: "https://github.com",
@@ -50,9 +50,9 @@ export const projects: Project[] = [
   {
     id: 4,
     title: "Orbit",
-    description: "Analytics dashboard with interactive data visualization",
+    description: "Аналитическая панель с интерактивной визуализацией данных",
     longDescription:
-      "A powerful analytics dashboard featuring interactive charts, real-time data streaming, and customizable reporting. Built with D3.js for visualizations and optimized for handling millions of data points.",
+      "Мощная аналитическая панель с интерактивными графиками, потоковой передачей данных в реальном времени и настраиваемой отчётностью. Построена на D3.js для визуализации и оптимизирована для обработки миллионов точек данных.",
     image: "/placeholder.svg",
     tags: ["React", "D3.js", "Node.js", "Redis", "GraphQL"],
     githubUrl: "https://github.com",

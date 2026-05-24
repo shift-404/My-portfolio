@@ -29,10 +29,10 @@ export const socials: Social[] = [
 
 export const personalInfo = {
   name: "Alex Rivera",
-  title: "Fullstack Developer",
-  tagline: "Building digital experiences that matter",
-  bio: "I craft performant, scalable web applications with modern technologies. Passionate about clean code, beautiful interfaces, and pushing the boundaries of what's possible on the web.",
-  location: "San Francisco, CA",
+  title: "Fullstack-разработчик",
+  tagline: "Создаю цифровые впечатления, которые имеют значение",
+  bio: "Я создаю производительные, масштабируемые веб-приложения с использованием современных технологий. Увлечен чистым кодом, красивыми интерфейсами и расширением границ возможного в вебе.",
+  location: "Сан-Франциско, Калифорния",
   email: "hello@example.com",
   resumeUrl: "/resume.pdf",
   stats: {

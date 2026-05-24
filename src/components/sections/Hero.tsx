@@ -73,7 +73,7 @@ export function Hero() {
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5 text-accent-light text-sm font-medium">
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            Available for opportunities
+            Открыт к предложениям
           </span>
         </motion.div>
 
@@ -127,7 +127,7 @@ export function Hero() {
             onClick={() => scrollTo("projects")}
             className="gap-2"
           >
-            View Projects
+            Проекты
             <ExternalLink size={16} />
           </Button>
           <Button
@@ -136,7 +136,7 @@ export function Hero() {
             onClick={() => scrollTo("contact")}
             className="gap-2"
           >
-            Get in Touch
+            Связаться
           </Button>
           <Button size="lg" variant="ghost" className="gap-2" asChild>
             <a href="https://github.com" target="_blank" rel="noopener noreferrer">
@@ -160,7 +160,7 @@ export function Hero() {
           className="flex flex-col items-center gap-2 text-muted hover:text-foreground transition-colors"
         >
           <span className="text-xs font-medium tracking-widest uppercase">
-            Scroll
+            Листать
           </span>
           <ArrowDown size={16} />
         </motion.button>

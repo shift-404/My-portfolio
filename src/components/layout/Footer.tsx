@@ -30,7 +30,7 @@ export function Footer() {
                 AR<span className="text-accent">.</span>
               </button>
               <span className="text-muted text-sm ml-4">
-                &copy; {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
+                &copy; {new Date().getFullYear()} {personalInfo.name}. Все права защищены.
               </span>
             </div>
 

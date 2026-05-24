@@ -113,10 +113,10 @@ export function Experience() {
               /experience
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">
-              <TextReveal>Experience</TextReveal>
+              <TextReveal>Опыт</TextReveal>
             </h2>
             <p className="text-muted text-lg max-w-2xl">
-              My professional journey in software development
+              Мой профессиональный путь в разработке программного обеспечения
             </p>
           </div>
         </ScrollReveal>

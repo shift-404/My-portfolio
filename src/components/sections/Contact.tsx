@@ -13,13 +13,13 @@ import { socials, personalInfo } from "@/data/socials";
 const contactInfo = [
   {
     icon: <Mail size={16} />,
-    label: "Email",
+    label: "Почта",
     value: personalInfo.email,
     href: `mailto:${personalInfo.email}`,
   },
   {
     icon: <MapPin size={16} />,
-    label: "Location",
+    label: "Локация",
     value: personalInfo.location,
   },
 ];
@@ -63,11 +63,10 @@ export function Contact() {
               /contact
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">
-              <TextReveal>Get in Touch</TextReveal>
+              <TextReveal>Связаться</TextReveal>
             </h2>
             <p className="text-muted text-lg max-w-2xl">
-              Have a project in mind or just want to say hi? I&apos;d love to
-              hear from you.
+              Есть проект или просто хотите сказать привет? Буду рад услышать вас.
             </p>
           </div>
         </ScrollReveal>
@@ -81,7 +80,7 @@ export function Contact() {
             <div className="space-y-6">
               <div className="p-6 rounded-xl border border-border bg-surface/30 backdrop-blur-sm">
                 <h3 className="text-lg font-display font-bold mb-4">
-                  Contact Info
+                  Контакты
                 </h3>
                 <div className="space-y-4">
                   {contactInfo.map((info) => (
@@ -111,7 +110,7 @@ export function Contact() {
 
               <div className="p-6 rounded-xl border border-border bg-surface/30 backdrop-blur-sm">
                 <h3 className="text-lg font-display font-bold mb-4">
-                  Social Links
+                  Социальные сети
                 </h3>
                 <div className="flex gap-3">
                   {socials.map((social) => (
@@ -150,10 +149,10 @@ export function Contact() {
                     <Send size={24} className="text-accent-light" />
                   </div>
                   <h3 className="text-xl font-display font-bold mb-2">
-                    Message Sent!
+                    Сообщение отправлено!
                   </h3>
                   <p className="text-muted text-sm">
-                    Thanks for reaching out. I&apos;ll get back to you soon.
+                    Спасибо, что написали. Я свяжусь с вами в ближайшее время.
                   </p>
                 </motion.div>
               ) : (
@@ -161,10 +160,10 @@ export function Contact() {
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div className="space-y-2">
                       <label className="text-sm text-muted font-medium">
-                        Name
+                        Имя
                       </label>
                       <Input
-                        placeholder="Your name"
+                        placeholder="Ваше имя"
                         value={formState.name}
                         onChange={(e) =>
                           setFormState({ ...formState, name: e.target.value })
@@ -189,10 +188,10 @@ export function Contact() {
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm text-muted font-medium">
-                      Message
+                      Сообщение
                     </label>
                     <Textarea
-                      placeholder="Tell me about your project..."
+                      placeholder="Расскажите о вашем проекте..."
                       value={formState.message}
                       onChange={(e) =>
                         setFormState({
@@ -221,11 +220,11 @@ export function Contact() {
                           }}
                           className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
                         />
-                        Sending...
+                        Отправка...
                       </>
                     ) : (
                       <>
-                        Send Message
+                        Отправить
                         <Send size={16} />
                       </>
                     )}

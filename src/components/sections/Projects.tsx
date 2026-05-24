@@ -48,7 +48,7 @@ function ProjectCard({
           >
             <div className="space-y-6">
               <Badge variant="glow" className="text-xs tracking-wider">
-                Featured Project
+                Избранный проект
               </Badge>
 
               <h3 className="text-3xl sm:text-4xl font-display font-bold">
@@ -74,7 +74,7 @@ function ProjectCard({
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Live Demo
+                    Демо
                     <ExternalLink size={14} />
                   </a>
                 </Button>
@@ -85,7 +85,7 @@ function ProjectCard({
                     rel="noopener noreferrer"
                   >
                     <Github size={14} />
-                    Source
+                    Исходный код
                   </a>
                 </Button>
               </div>
@@ -118,18 +118,14 @@ function ProjectCard({
                       </p>
                     </div>
                   </div>
-                  {/* Hover gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-accent/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  {/* Animated border */}
                   <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <div className="absolute inset-0 rounded-2xl border-2 border-accent/30" />
                   </div>
                 </div>
 
-                {/* Glow effect */}
                 <div className="absolute -inset-4 bg-accent/5 rounded-[24px] blur-[20px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
 
-                {/* Corner accent */}
                 <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden">
                   <div className="absolute top-0 right-0 w-[141px] h-[141px] bg-gradient-to-br from-accent/20 to-transparent rotate-45 translate-x-[70px] -translate-y-[70px] group-hover:translate-x-[50px] group-hover:-translate-y-[50px] transition-all duration-500" />
                 </div>
@@ -156,11 +152,10 @@ export function Projects() {
               /projects
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">
-              <TextReveal>Selected Work</TextReveal>
+              <TextReveal>Избранные работы</TextReveal>
             </h2>
             <p className="text-muted text-lg max-w-2xl">
-              A collection of projects I&apos;ve built, from concept to
-              production
+              Коллекция проектов, которые я создал — от идеи до производства
             </p>
           </div>
         </ScrollReveal>
@@ -183,7 +178,7 @@ export function Projects() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View All Projects
+                Все проекты
                 <ArrowRight size={16} />
               </a>
             </Button>

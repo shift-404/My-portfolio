@@ -19,22 +19,22 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Rivera | Fullstack Developer",
+  title: "Alex Rivera | Fullstack-разработчик",
   description:
-    "Fullstack developer crafting performant, scalable web applications with modern technologies.",
+    "Fullstack-разработчик, создающий производительные, масштабируемые веб-приложения с использованием современных технологий.",
   keywords: [
-    "developer",
+    "разработчик",
     "fullstack",
     "react",
     "next.js",
     "typescript",
-    "portfolio",
+    "портфолио",
   ],
   authors: [{ name: "Alex Rivera" }],
   openGraph: {
-    title: "Alex Rivera | Fullstack Developer",
+    title: "Alex Rivera | Fullstack-разработчик",
     description:
-      "Fullstack developer crafting performant, scalable web applications.",
+      "Fullstack-разработчик, создающий производительные, масштабируемые веб-приложения.",
     type: "website",
   },
 };
@@ -46,7 +46,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
+      lang="ru"
       className={`${inter.variable} ${spaceGrotesk.variable} dark`}
       suppressHydrationWarning
     >

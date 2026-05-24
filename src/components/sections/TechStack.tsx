@@ -35,10 +35,10 @@ export function TechStack() {
               /stack
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-6">
-              <TextReveal>Tech Stack</TextReveal>
+              <TextReveal>Технологии</TextReveal>
             </h2>
             <p className="text-muted text-lg max-w-2xl">
-              Technologies I work with daily to build modern web applications
+              Технологии, с которыми я работаю ежедневно для создания современных веб-приложений
             </p>
           </div>
         </ScrollReveal>
