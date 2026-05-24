@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/lib/i18n/LanguageProvider";
 
@@ -16,7 +16,7 @@ const navLinks = [
 ];
 
 export function Navbar() {
-  const { t } = useLanguage();
+  const { t, lang, setLang } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
@@ -46,6 +46,19 @@ export function Navbar() {
     setIsOpen(false);
     const el = document.querySelector(href);
     el?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const flagMap: Record<string, string> = {
+    ru: "🇷🇺",
+    uk: "🇺🇦",
+    en: "🇬🇧",
+  };
+
+  const handleLanguageChange = () => {
+    const langs: Array<"ru" | "uk" | "en"> = ["ru", "uk", "en"];
+    const currentIndex = langs.indexOf(lang);
+    const nextLang = langs[(currentIndex + 1) % langs.length];
+    setLang(nextLang);
   };
 
   return (
@@ -93,13 +106,25 @@ export function Navbar() {
             ))}
           </div>
 
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden relative z-50 p-2 text-foreground hover:text-accent transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <div className="flex items-center gap-1">
+            <button
+              onClick={handleLanguageChange}
+              className="p-2 rounded-lg text-muted hover:text-foreground hover:bg-card transition-all duration-300 text-sm"
+              aria-label="Switch language"
+              title={`${t("lang.title")}: ${t("lang." + lang)}`}
+            >
+              <span className="hidden md:inline">{flagMap[lang]}</span>
+              <Globe size={18} className="md:hidden" />
+            </button>
+
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden relative z-50 p-2 text-foreground hover:text-accent transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </nav>
       </motion.header>
 
