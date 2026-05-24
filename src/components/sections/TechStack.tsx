@@ -34,7 +34,7 @@ export function TechStack() {
   const { t } = useLanguage();
 
   return (
-    <section id="stack" className="relative py-32 border-t border-border/50">
+    <section id="stack" className="relative py-20 md:py-32 border-t border-border/50">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px]" />
       </div>
@@ -68,7 +68,7 @@ export function TechStack() {
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${categoryColors[group.category]} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                 />
-                <div className="relative z-10 p-6">
+                <div className="relative z-10 p-5 md:p-6">
                   <h3
                     className={`text-lg font-display font-bold mb-4 ${accentColors[group.category]}`}
                   >

@@ -52,7 +52,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative py-32 border-t border-border/50">
+    <section id="contact" className="relative py-20 md:py-32 border-t border-border/50">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[150px]" />
       </div>
@@ -75,7 +75,7 @@ export function Contact() {
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 max-w-5xl mx-auto">
           <ScrollReveal direction="left" className="lg:col-span-2">
             <div className="space-y-6">
-              <div className="p-6 rounded-xl border border-border bg-surface/30 backdrop-blur-sm">
+              <div className="p-5 md:p-6 rounded-xl border border-border bg-surface/30 backdrop-blur-sm">
                 <h3 className="text-lg font-display font-bold mb-4">
                   {t("contact.info")}
                 </h3>
@@ -105,7 +105,7 @@ export function Contact() {
                 </div>
               </div>
 
-              <div className="p-6 rounded-xl border border-border bg-surface/30 backdrop-blur-sm">
+              <div className="p-5 md:p-6 rounded-xl border border-border bg-surface/30 backdrop-blur-sm">
                 <h3 className="text-lg font-display font-bold mb-4">
                   {t("contact.social")}
                 </h3>
@@ -130,7 +130,7 @@ export function Contact() {
           <ScrollReveal direction="right" className="lg:col-span-3">
             <form
               onSubmit={handleSubmit}
-              className="p-8 rounded-xl border border-border bg-surface/30 backdrop-blur-sm"
+              className="p-6 md:p-8 rounded-xl border border-border bg-surface/30 backdrop-blur-sm"
             >
               {submitted ? (
                 <motion.div

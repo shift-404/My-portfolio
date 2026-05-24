@@ -64,7 +64,7 @@ function TimelineItem({
         <config.icon size={16} className={config.color} />
       </div>
 
-      <div className="p-6 rounded-xl border border-border bg-surface/30 backdrop-blur-sm hover:border-accent/20 transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(139,92,246,0.05)]">
+      <div className="p-5 md:p-6 rounded-xl border border-border bg-surface/30 backdrop-blur-sm hover:border-accent/20 transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(139,92,246,0.05)]">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
           <div>
             <h3 className="text-lg font-display font-bold text-foreground">
@@ -104,7 +104,7 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="relative py-32 border-t border-border/50"
+      className="relative py-20 md:py-32 border-t border-border/50"
     >
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[120px]" />

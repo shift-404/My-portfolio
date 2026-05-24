@@ -78,7 +78,7 @@ export function Hero() {
           </span>
         </motion.div>
 
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-bold tracking-tight leading-none mb-6">
+        <h1 className="text-[2.5rem] xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-bold tracking-tight leading-none mb-6">
           <span className="inline-block">
             {nameChars.map((char, i) => (
               <motion.span

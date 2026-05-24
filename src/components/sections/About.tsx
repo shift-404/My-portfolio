@@ -20,7 +20,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="relative py-32 border-t border-border/50"
+      className="relative py-20 md:py-32 border-t border-border/50"
     >
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[120px]" />
@@ -38,7 +38,7 @@ export function About() {
           </div>
         </ScrollReveal>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <ScrollReveal direction="left">
             <div className="relative">
               <div className="aspect-square max-w-md mx-auto rounded-2xl border border-border bg-surface/50 overflow-hidden relative group">
@@ -85,7 +85,7 @@ export function About() {
         </div>
 
         <ScrollReveal delay={0.3}>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-16 md:mt-20">
             {stats.map((stat, i) => (
               <motion.div
                 key={stat.label}

@@ -35,14 +35,11 @@ function ProjectCard({
     <motion.div
       ref={ref}
       style={{ opacity, scale }}
-      className="relative mb-32 last:mb-0"
+      className="relative mb-16 md:mb-32 last:mb-0"
     >
-      <div
-        className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center ${
-          isEven ? "" : "lg:direction-rtl"
-        }`}
-      >
-        <div className={`order-2 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
+      <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        {/* Content */}
+        <div className={`order-1 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
           <ScrollReveal
             direction={isEven ? "left" : "right"}
             delay={0.2}
@@ -94,7 +91,7 @@ function ProjectCard({
           </ScrollReveal>
         </div>
 
-        <div className={`order-1 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
+        <div className={`order-2 ${isEven ? "lg:order-2" : "lg:order-1"}`}>
           <ScrollReveal
             direction={isEven ? "right" : "left"}
             delay={0.1}
@@ -142,14 +139,14 @@ export function Projects() {
   const { t } = useLanguage();
 
   return (
-    <section id="projects" className="relative py-32 border-t border-border/50">
+    <section id="projects" className="relative py-20 md:py-32 border-t border-border/50">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[150px]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <ScrollReveal>
-          <div className="flex flex-col items-center text-center mb-24">
+          <div className="flex flex-col items-center text-center mb-16 md:mb-24">
             <span className="text-accent font-mono text-sm tracking-widest uppercase mb-4">
               {t("projects.section")}
             </span>
