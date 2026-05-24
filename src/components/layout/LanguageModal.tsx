@@ -5,7 +5,6 @@ import { useLanguage, type Language } from "@/lib/i18n/LanguageProvider";
 import { Globe } from "lucide-react";
 
 const languages: { code: Language; labelKey: string; flag: string }[] = [
-  { code: "ru", labelKey: "lang.ru", flag: "🇷🇺" },
   { code: "uk", labelKey: "lang.uk", flag: "🇺🇦" },
   { code: "en", labelKey: "lang.en", flag: "🇬🇧" },
 ];

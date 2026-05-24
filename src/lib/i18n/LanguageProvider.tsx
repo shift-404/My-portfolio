@@ -1,13 +1,12 @@
 "use client";
 
 import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from "react";
-import ru from "./translations/ru";
 import uk from "./translations/uk";
 import en from "./translations/en";
 
-export type Language = "ru" | "uk" | "en";
+export type Language = "uk" | "en";
 
-const translations: Record<Language, Record<string, string>> = { ru, uk, en };
+const translations: Record<Language, Record<string, string>> = { uk, en };
 
 interface LanguageContextType {
   lang: Language;
@@ -18,7 +17,7 @@ interface LanguageContextType {
 }
 
 const LanguageContext = createContext<LanguageContextType>({
-  lang: "ru",
+  lang: "uk",
   setLang: () => {},
   t: (key: string) => key,
   showModal: false,
@@ -26,12 +25,12 @@ const LanguageContext = createContext<LanguageContextType>({
 });
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Language>("ru");
+  const [lang, setLangState] = useState<Language>("uk");
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem("lang") as Language | null;
-    if (stored && ["ru", "uk", "en"].includes(stored)) {
+    if (stored && ["uk", "en"].includes(stored)) {
       setLangState(stored);
     } else {
       setShowModal(true);

@@ -49,13 +49,12 @@ export function Navbar() {
   };
 
   const flagMap: Record<string, string> = {
-    ru: "🇷🇺",
     uk: "🇺🇦",
     en: "🇬🇧",
   };
 
   const handleLanguageChange = () => {
-    const langs: Array<"ru" | "uk" | "en"> = ["ru", "uk", "en"];
+    const langs: Array<"uk" | "en"> = ["uk", "en"];
     const currentIndex = langs.indexOf(lang);
     const nextLang = langs[(currentIndex + 1) % langs.length];
     setLang(nextLang);

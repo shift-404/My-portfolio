@@ -2,7 +2,6 @@ const en = {
   // Language Modal
   "lang.title": "Choose Language",
   "lang.subtitle": "Select your preferred language",
-  "lang.ru": "Русский",
   "lang.uk": "Українська",
   "lang.en": "English",
 

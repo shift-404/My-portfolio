@@ -2,7 +2,6 @@ const uk = {
   // Language Modal
   "lang.title": "Виберіть мову",
   "lang.subtitle": "Оберіть бажану мову",
-  "lang.ru": "Русский",
   "lang.uk": "Українська",
   "lang.en": "English",
 

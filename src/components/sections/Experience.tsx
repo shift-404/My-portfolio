@@ -41,8 +41,8 @@ function TimelineItem({
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const config = typeConfig[experience.type];
 
-  const getLocalized = (field: { ru: string; uk: string; en: string }) =>
-    field[lang] || field.ru;
+  const getLocalized = (field: { uk: string; en: string }) =>
+    field[lang];
 
   return (
     <motion.div

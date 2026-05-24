@@ -21,23 +21,23 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Руслан Чистяков | Fullstack-разработчик",
+  title: "Руслан Чистяков | Fullstack-розробник",
   description:
-    "Full-stack разработчик и системный администратор. Создаю цифровые экосистемы с нуля: от серверной инфраструктуры до кастомных интерфейсов.",
+    "Full-stack розробник та системний адміністратор. Створюю цифрові екосистеми з нуля: від серверної інфраструктури до кастомних інтерфейсів.",
   keywords: [
-    "разработчик",
+    "розробник",
     "fullstack",
     "react",
     "next.js",
     "typescript",
-    "портфолио",
-    "системный администратор",
+    "портфоліо",
+    "системний адміністратор",
   ],
   authors: [{ name: "Руслан Чистяков" }],
   openGraph: {
-    title: "Руслан Чистяков | Fullstack-разработчик",
+    title: "Руслан Чистяков | Fullstack-розробник",
     description:
-      "Full-stack разработчик и системный администратор. Создаю цифровые экосистемы с нуля.",
+      "Full-stack розробник та системний адміністратор. Створюю цифрові екосистеми з нуля.",
     type: "website",
   },
 };
@@ -49,7 +49,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="ru"
+      lang="uk"
       className={`${inter.variable} ${spaceGrotesk.variable} dark`}
       suppressHydrationWarning
     >
